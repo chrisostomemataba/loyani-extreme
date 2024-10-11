@@ -1,0 +1,68 @@
+/* safariExperiences.module.css */
+
+/* Background with a growing white opacity effect */
+.safariExperiences {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+  }
+  
+  .backgroundImage {
+    background-image: url('/images/mount-kilimanjaro.jpg');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .safariExperiences:hover .backgroundImage {
+    opacity: 0.4;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(2px);
+  }
+  
+  /* Safari Cards */
+  .card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cardBody {
+    padding: 20px;
+  }
+  
+  .cardBody h3 {
+    color: var(--color-primary);
+  }
+  
+  .cardBody p {
+    color: var(--color-muted);
+    font-size: 1.1rem;
+  }
+  
+  .cardBody a {
+    background-color: var(--color-secondary);
+    color: white;
+    border-radius: 8px;
+    padding: 12px 24px;
+    display: inline-block;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .cardBody a:hover {
+    background-color: var(--color-muted);
+  }
+  

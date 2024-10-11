@@ -1,0 +1,18 @@
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalContent {
+  background-color: rgba(255, 255, 255, 0.9); /* Translucent background */
+  border-radius: 10px;
+  padding: 2rem;
+  width: 600px;
+  max-width: 100%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.step-content {
+  margin-bottom: 2rem;
+}

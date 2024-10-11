@@ -1,0 +1,26 @@
+.inquiryCard {
+    background-color: #f0e9df;
+  }
+  
+  .inquiryCard h3 {
+    color: #ce6510;
+  }
+  
+  .inquiryCard input,
+  .inquiryCard textarea {
+    background-color: #fff;
+  }
+  
+  .inquiryCard input::placeholder,
+  .inquiryCard textarea::placeholder {
+    color: #5c564e;
+  }
+  
+  .inquiryCard button {
+    background-color: #ce6510;
+  }
+  
+  .inquiryCard button:hover {
+    background-color: #c1ab96;
+  }
+  

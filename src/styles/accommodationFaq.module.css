@@ -1,0 +1,33 @@
+.accommodationFaqSection {
+    background-color: #f5f5f5; /* Light gray background for the FAQ section */
+    padding: 4rem 0;
+  }
+  
+  .faqTitle {
+    color: #ce6510; /* Darker text color for the title */
+  }
+  
+  .faqDescription {
+    color: #666; /* Slightly muted text color for the description */
+  }
+  
+  .card {
+    background-color: #ffffff; /* White background for each card */
+    border-radius: 0.5rem; /* Rounded corners for each card */
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow on hover for cards */
+  }
+  
+  .cardTitle {
+    font-weight: bold;
+    color: #ce6510; /* Primary blue for card titles */
+  }
+  
+  .cardContent {
+    color: #555; /* Text color for FAQ content */
+  }
+  
+  

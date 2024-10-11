@@ -1,0 +1,27 @@
+/* footer.module.css */
+
+/* Main Footer Section */
+.footer {
+  background-color: var(--color-background);
+  color: var(--color-muted);
+}
+
+/* Footer Links Styling */
+.footer a {
+  color: var(--color-muted);
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--color-secondary);
+}
+
+/* Social Media Icon Styling */
+.footer svg {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer svg:hover {
+  transform: scale(1.1);
+  color: var(--color-secondary);
+}

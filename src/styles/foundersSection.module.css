@@ -1,0 +1,107 @@
+/* Section Wrapper */
+.foundersWrapper {
+  padding: 2rem 1rem;
+  background-color: var(--color-background);
+  color: rgb(var(--foreground-rgb));
+  text-align: center;
+  transition: opacity 0.6s ease-in-out;
+  margin: 0;
+  opacity: 0;
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+/* Cards Container */
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Card Styling */
+.card {
+  background-color: white;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1.5rem;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* Image Bleed Effect */
+.imageWrapper {
+  position: relative;
+  overflow: visible;
+}
+
+.founderImage {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+  top: -15px;
+}
+
+/* Card Content */
+.cardContent {
+  padding: 1rem;
+  background-color: var(--color-background);
+}
+
+.founderName {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+
+.founderRole {
+  font-size: 1.1rem;
+  color: var(--color-muted);
+}
+
+.founderBiography {
+  font-size: 1rem;
+  color: var(--color-secondary);
+  line-height: 1.5;
+}
+
+/* Animation for Cards */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeUp {
+  animation: fadeUp 0.6s ease-out;
+}
+
+.sectionTitle {
+  @apply text-4xl font-bold text-center text-orange-600 mb-10;
+}
+
+.founderCard {
+  @apply bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300;
+}

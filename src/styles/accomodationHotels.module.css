@@ -1,0 +1,74 @@
+.accommodationSection {
+  background-image: url('/images/serengeti-background.jpg');  /* New background image */
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));  /* Responsive layout for larger screens */
+  grid-auto-rows: minmax(300px, auto);
+  gap: 2rem;
+}
+
+.wideCard {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.tallCard {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.bentoCard {
+  position: relative;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bentoCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.hotelImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.7);  /* Dark background for better readability */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .bentoGrid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));  /* Stack cards on smaller screens */
+    grid-auto-rows: minmax(200px, auto);
+  }
+
+  .wideCard, .tallCard {
+    grid-column: span 1;  /* All cards take up a single column on mobile */
+    grid-row: span 1;
+  }
+
+  .bentoCard {
+    height: auto;  /* Ensure cards are auto-sized on smaller screens */
+  }
+
+  .hotelImage {
+    height: 200px;
+  }
+}

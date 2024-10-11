@@ -1,0 +1,83 @@
+/* wildlifeShowcase.module.css */
+
+/* Main Section with a fading background image using "lions" image */
+.wildlifeShowcase {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+  }
+  
+  .backgroundImage {
+    background-image: url('/images/lions.jpg'); /* Using the lions image */
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.9;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .wildlifeShowcase:hover .backgroundImage {
+    opacity: 0.4;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(3px);
+  }
+  
+  /* Wildlife Cards */
+  .card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    position: relative;
+    animation: fadeInUp 0.7s ease forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cardBody {
+    padding: 20px;
+  }
+  
+  .cardBody h3 {
+    color: var(--color-primary);
+  }
+  
+  .cardBody p {
+    color: var(--color-muted);
+    font-size: 1.1rem;
+  }
+  
+  /* Button Styles */
+  .cardBody a {
+    background-color: var(--color-secondary);
+    color: white;
+    border-radius: 8px;
+    padding: 12px 24px;
+    display: inline-block;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .cardBody a:hover {
+    background-color: var(--color-muted);
+  }
+  

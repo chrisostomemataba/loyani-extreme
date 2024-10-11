@@ -1,0 +1,38 @@
+/* layout.module.css */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .main-content {
+    padding: 2rem 0;
+  }
+  
+  .background-jungle {
+    background-image: url('/images/jungle-background.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+  }
+  
+  .content-with-overlay {
+    position: relative;
+    z-index: 3;
+    color: white;
+    text-align: center;
+  }
+  
+  

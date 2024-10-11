@@ -1,0 +1,62 @@
+/* testimonials.module.css */
+
+/* Main Section */
+.testimonials {
+    position: relative;
+    padding: 100px 0;
+    background-color: var(--color-background);
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Testimonial Cards */
+  .card {
+    background-color: rgba(255, 255, 255, 0.5); /* Translucent card */
+    border-radius: 15px;
+    backdrop-filter: blur(8px); /* Frosted glass effect */
+    padding: 20px;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    animation: fadeInUp 0.7s ease forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Text Styling */
+  .card h3 {
+    color: var(--color-primary);
+  }
+  
+  .card p {
+    color: var(--color-muted);
+    font-size: 1.1rem;
+  }
+  
+  /* Quote Icon Styling */
+  .card svg {
+    color: var(--color-secondary);
+  }
+  
+  /* Image Styling */
+  .card img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  

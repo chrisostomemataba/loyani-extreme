@@ -1,0 +1,61 @@
+/* groupDepartures.module.css */
+
+/* Main Section */
+.groupDepartures {
+  position: relative;
+  padding: 100px 0;
+  background-color: var(--color-background);
+}
+
+/* Translucent Table Card */
+.tableCard {
+  background-color: rgba(255, 255, 255, 0.3); /* Translucent effect */
+  border-radius: 15px;
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  padding: 20px;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.tableCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Table Styling - Added .customTable class */
+.customTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.1rem;
+}
+
+.customTable th, .customTable td {
+  padding: 16px;
+}
+
+.customTable th {
+  background-color: rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+}
+
+.customTable td {
+  color: var(--color-primary);
+}
+
+.customTable tr:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Button Styling */
+.customTable td a {
+  background-color: var(--color-secondary);
+  color: white;
+  border-radius: 50px; /* Rounded button */
+  padding: 12px 24px;
+  display: inline-block;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.customTable td a:hover {
+  background-color: var(--color-muted);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}

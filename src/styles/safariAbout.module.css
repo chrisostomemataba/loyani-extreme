@@ -1,0 +1,73 @@
+/* safariAbout.module.css */
+
+/* General Section Styling */
+.about-section {
+  background-color: var(--loyani-background);
+  color: var(--loyani-text);
+  padding: 3rem 1.5rem;
+}
+
+.about-container {
+  max-width: 64rem; /* Ensures content is not too wide on large screens */
+  margin: 0 auto;
+}
+
+.section-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--loyani-primary);
+  margin-bottom: 2rem;
+}
+
+.section-subheading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--loyani-primary);
+  margin-bottom: 1.5rem;
+}
+
+.about-text {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Highlight Bullet Points */
+.highlight-list {
+  list-style: none;
+  padding: 0;
+}
+
+.highlight-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.highlight-icon {
+  font-size: 1.5rem;
+  color: #22c55e; /* Green bullet point color */
+  margin-right: 1rem;
+}
+
+/* Price Section */
+.price-container {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 24rem; /* Keeps the price card small */
+  margin-top: 2rem;
+}
+
+.price-heading {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.price-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--loyani-secondary);
+}
