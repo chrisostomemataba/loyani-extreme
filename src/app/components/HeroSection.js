@@ -1,29 +1,61 @@
-"use client";  // Ensure the component runs on the client side
+"use client";
 
-import React from 'react';
-import styles from '../../styles/heroSection.module.css';
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import styles from "../../styles/heroSection.module.css";
+
+const images = [
+  "/images/guideselephant.jpg",
+  "/images/elephantears.jpg",
+  "/images/herd-elephant.jpg",
+];
+
+const headlines = [
+  "Embark on a Journey of Discovery",
+  "Witness Nature's Majestic Giants",
+  "Experience the Heart of Africa",
+];
+
+const subheadlines = [
+  "Where every step unveils a new wonder",
+  "Unforgettable encounters in their natural habitat",
+  "Immerse yourself in the rhythm of the wild",
+];
 
 export default function HeroSection({ onButtonClick }) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className={`${styles.hero} relative`}>
-      <video className="w-full h-full object-cover" autoPlay muted loop>
-        <source src="/videos/giraffes.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div className={`${styles.mistyOverlay} absolute inset-0`}></div>
-      <div className={`${styles.overlay} absolute inset-0 flex items-center justify-center`}>
-        <div className="text-center">
-          <h1 className={`${styles.heroTitle} text-white text-5xl font-bold`}>
-            Discover the Wonders of Loyani
-          </h1>
-          <p className={`${styles.heroSubtitle} text-white text-xl mt-4`}>
-            Embark on an unforgettable safari experience with Loyani Tours & Safaris.
+    <section className={styles.hero}>
+      {images.map((img, index) => (
+        <Image
+          key={img}
+          src={img}
+          alt={`Safari landscape ${index + 1}`}
+          layout="fill"
+          objectFit="cover"
+          priority={index === 0}
+          className={`${styles.heroImage} ${
+            index === currentImageIndex ? styles.active : ""
+          }`}
+        />
+      ))}
+      <div className={styles.overlay}>
+        <div className={styles.content}>
+          <h1 className={styles.heroTitle}>{headlines[currentImageIndex]}</h1>
+          <p className={styles.heroSubtitle}>
+            {subheadlines[currentImageIndex]}
           </p>
-          <button
-            onClick={onButtonClick}  // Handle button click
-            className={`${styles.heroButton} mt-8 bg-secondary text-white font-semibold py-2 px-6 rounded hover:bg-muted transition duration-300`}
-          >
-            Book Your Adventure
+          <button onClick={onButtonClick} className={styles.heroButton}>
+            Begin Your Safari
           </button>
         </div>
       </div>

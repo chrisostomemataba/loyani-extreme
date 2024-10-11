@@ -187,10 +187,258 @@ export default function SafariPage() {
       ],
     },
 
+"photography-safaris": {
+  title: "Photography Safaris",
+  subtitle: "Capture the Beauty of African Wildlife",
+  heroImage: "/images/photographer-savannah.jpg",
+  overview: "Embark on a 7-day photographic journey through Tanzania's most picturesque landscapes. Ideal for both amateur and professional photographers, this safari offers unparalleled opportunities to capture Africa's diverse wildlife and stunning sceneries.",
+  highlights: [
+    "Guided by professional wildlife photographers",
+    "Specially modified vehicles for optimal camera positioning",
+    "Golden hour drives in Serengeti and Ngorongoro",
+    "Workshops on wildlife photography techniques",
+    "Opportunity to photograph the Great Migration",
+  ],
+  priceDetails: { price: 3200 },
+  itinerary: [
+    {
+      day: 1,
+      description: "Arrival in Arusha",
+      details: "Welcome meeting and equipment check. Overnight at a lodge.",
+      time: "2 hours",
+      meal: "Dinner"
+    },
+    {
+      day: 2,
+      description: "Tarangire National Park",
+      details: "Full day photographing elephants and baobab landscapes.",
+      time: "8 hours",
+      meal: "Breakfast, Lunch, Dinner"
+    },
+    {
+      day: 3,
+      description: "Serengeti National Park",
+      details: "Drive to Serengeti. Afternoon game drive and sunset shoot.",
+      time: "6 hours",
+      meal: "Breakfast, Lunch, Dinner"
+    },
+    {
+      day: 4,
+      description: "Serengeti Photography",
+      details: "Full day in Serengeti with dawn and dusk shoots.",
+      time: "12 hours",
+      meal: "Breakfast, Lunch, Dinner"
+    },
+    {
+      day: 5,
+      description: "Ngorongoro Crater",
+      details: "Early morning descent into the crater for unique shots.",
+      time: "10 hours",
+      meal: "Breakfast, Lunch, Dinner"
+    },
+    {
+      day: 6,
+      description: "Lake Manyara",
+      details: "Bird photography and tree-climbing lions.",
+      time: "8 hours",
+      meal: "Breakfast, Lunch, Dinner"
+    },
+    {
+      day: 7,
+      description: "Departure",
+      details: "Final image review and return to Arusha.",
+      time: "3 hours",
+      meal: "Breakfast"
+    }
+  ],
+  faq: [
+    {
+      question: "What camera equipment should I bring?",
+      answer: "We recommend a DSLR or mirrorless camera with a variety of lenses, including a telephoto lens (at least 300mm). A tripod is also useful."
+    },
+    {
+      question: "Is this safari suitable for beginners?",
+      answer: "Yes, our experienced guides can cater to all skill levels, from beginners to professionals."
+    }
+  ],
+  includes: [
+    "Professional photography guide",
+    "Modified safari vehicles for photographers",
+    "All park fees and game drives",
+    "Accommodation in lodges and tented camps",
+    "All meals and drinks while on safari",
+    "Daily photography workshops and image reviews"
+  ],
+  excludes: [
+    "International flights",
+    "Camera equipment and accessories",
+    "Personal travel insurance",
+    "Gratuities for guides and staff"
+  ]
+},
+
+"elephant-herd": {
+  title: "Elephant Herd Safari",
+  subtitle: "Journey with the Giants of Africa",
+  heroImage: "/images/elephantloyani3.jpg",
+  overview: "Experience a unique 6-day safari focused on observing and understanding elephant behavior. Witness large herds in their natural habitat and learn about conservation efforts.",
+  highlights: [
+    "Close encounters with elephant herds in Tarangire and Amboseli",
+    "Visit to an elephant research center",
+    "Guided bush walks to observe elephant behavior",
+    "Night drives to see nocturnal elephant activities",
+    "Contribute to elephant conservation projects"
+  ],
+  priceDetails: { price: 2800 },
+  itinerary: [
+    {
+      day: 1,
+      description: "Arrival in Arusha",
+      details: "Transfer to lodge. Evening presentation on elephant ecology.",
+      time: "3 hours",
+      meal: "Dinner"
+    },
+    {
+      day: 2,
+      description: "Tarangire National Park",
+      details: "Full day observing large elephant herds around Tarangire River.",
+      time: "10 hours",
+      meal: "Breakfast, Lunch, Dinner"
+    },
+    {
+      day: 3,
+      description: "Tarangire Research",
+      details: "Visit elephant research center. Afternoon game drive.",
+      time: "8 hours",
+      meal: "Breakfast, Lunch, Dinner"
+    },
+    {
+      day: 4,
+      description: "Amboseli National Park",
+      details: "Transfer to Amboseli. Evening game drive to spot elephants.",
+      time: "6 hours",
+      meal: "Breakfast, Lunch, Dinner"
+    },
+    {
+      day: 5,
+      description: "Amboseli Elephant Watching",
+      details: "Full day in Amboseli observing elephants against Mt. Kilimanjaro backdrop.",
+      time: "12 hours",
+      meal: "Breakfast, Lunch, Dinner"
+    },
+    {
+      day: 6,
+      description: "Departure",
+      details: "Morning bush walk. Transfer back to Arusha.",
+      time: "4 hours",
+      meal: "Breakfast"
+    }
+  ],
+  faq: [
+    {
+      question: "How close will we get to the elephants?",
+      answer: "We maintain a safe distance, but you'll be close enough for excellent viewing and photography. Safety is our priority."
+    },
+    {
+      question: "Is this safari suitable for children?",
+      answer: "Yes, it's educational and exciting for children aged 8 and above."
+    }
+  ],
+  includes: [
+    "Specialized elephant behavior guide",
+    "All park fees and game drives",
+    "Accommodation in lodges and luxury tented camps",
+    "All meals and drinks while on safari",
+    "Contribution to elephant conservation projects"
+  ],
+  excludes: [
+    "International flights",
+    "Personal travel insurance",
+    "Souvenirs and personal expenses",
+    "Gratuities for guides and staff"
+  ]
+},
+
+"sleeping-lions": {
+  title: "Sleeping Lions Safari",
+  subtitle: "Witness the Kings of the Savannah at Rest",
+  heroImage: "/images/sleeping-lion.jpg",
+  overview: "Join this unique 5-day safari focused on observing lion behavior, including their famous daytime resting periods. Perfect for big cat enthusiasts and wildlife photographers.",
+  highlights: [
+    "Extended observation of lion prides in Serengeti",
+    "Night drives to see active lions",
+    "Visit to lion research and conservation projects",
+    "Opportunity to see other big cats like cheetahs and leopards",
+    "Learn about lion behavior from expert guides"
+  ],
+  priceDetails: { price: 2600 },
+  itinerary: [
+    {
+      day: 1,
+      description: "Arrival in Arusha",
+      details: "Transfer to lodge. Evening briefing on lion ecology.",
+      time: "2 hours",
+      meal: "Dinner"
+    },
+    {
+      day: 2,
+      description: "Serengeti National Park",
+      details: "Drive to Serengeti. Afternoon game drive to locate lion prides.",
+      time: "6 hours",
+      meal: "Breakfast, Lunch, Dinner"
+    },
+    {
+      day: 3,
+      description: "Serengeti Lion Watching",
+      details: "Full day observing lion behavior, including famous tree-climbing lions.",
+      time: "12 hours",
+      meal: "Breakfast, Lunch, Dinner"
+    },
+    {
+      day: 4,
+      description: "Night and Dawn Drives",
+      details: "Early morning and night drives to see active lions. Midday rest.",
+      time: "10 hours",
+      meal: "Breakfast, Lunch, Dinner"
+    },
+    {
+      day: 5,
+      description: "Departure",
+      details: "Final morning game drive. Return to Arusha for departure.",
+      time: "4 hours",
+      meal: "Breakfast"
+    }
+  ],
+  faq: [
+    {
+      question: "Will we definitely see lions on this safari?",
+      answer: "While wildlife sightings can never be guaranteed, our expert guides know the best locations for lion sightings, maximizing your chances."
+    },
+    {
+      question: "Is it safe to be around lions?",
+      answer: "Yes, we always maintain a safe distance and observe from the safety of our vehicles. Your safety is our top priority."
+    }
+  ],
+  includes: [
+    "Expert lion behavior guide",
+    "All park fees and game drives",
+    "Accommodation in lodges and tented camps",
+    "All meals and drinks while on safari",
+    "Night drive permits",
+    "Contribution to lion conservation projects"
+  ],
+  excludes: [
+    "International flights",
+    "Personal travel insurance",
+    "Souvenirs and personal expenses",
+    "Gratuities for guides and staff"
+  ]
+},
+
     "adventure-safaris": {
       title: "Adventure Safaris",
       subtitle: "Thrilling Adventures in the Wild",
-      heroImage: "/images/adventure-safaris.jpg",
+      heroImage: "/images/balloon-elephant.jpg",
       overview:
         "Join us for a 5-day thrilling adventure in Tanzania's most iconic parks. Perfect for adrenaline seekers, these safaris cover Serengeti, Mikumi, Tarangire, and more.",
       highlights: [

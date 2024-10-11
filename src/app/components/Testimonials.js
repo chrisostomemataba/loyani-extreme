@@ -1,11 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaQuoteLeft } from "react-icons/fa";
 import styles from "../../styles/testimonials.module.css";
 
 export default function Testimonials() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const testimonials = [
     {
       name: "Sarah Johnson",
@@ -30,43 +33,69 @@ export default function Testimonials() {
     },
   ];
 
-  return (
-    <section className={`${styles.testimonials} relative py-16`}>
-      <div className="relative z-10 text-center mb-12">
-        <h2 className="text-5xl font-bold text-primary">What Our Guests Say</h2>
-        <p className="text-xl text-muted mt-4">
-          See what past explorers have to say about their adventures with Loyani
-          Safaris.
-        </p>
-      </div>
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    }, 5000);
 
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-20">
-        {testimonials.map((testimonial, index) => (
-          <div key={index} className={`${styles.card} shadow-lg`}>
-            <div className="p-6 text-center">
-              <FaQuoteLeft className="text-3xl text-secondary mb-4" />
-              <p className="text-lg leading-relaxed text-muted mb-4">
-                {testimonial.feedback}
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
+  return (
+    <section className={styles.testimonials}>
+      <div className={styles.backgroundPattern}></div>
+      <div className={styles.content}>
+        <h2 className={styles.title}>What Our Guests Say</h2>
+        <p className={styles.subtitle}>
+          Discover the experiences that make Loyani Safaris unforgettable
+        </p>
+
+        <div className={styles.testimonialCarousel}>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -50 }}
+              transition={{ duration: 0.5 }}
+              className={styles.testimonialCard}
+            >
+              <FaQuoteLeft className={styles.quoteIcon} />
+              <p className={styles.feedback}>
+                {testimonials[currentIndex].feedback}
               </p>
-              <FaQuoteRight className="text-3xl text-secondary mb-4" />
-              <div className="flex justify-center">
-                <div className="relative w-20 h-20 mb-4">
-                  <Image
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-full"
-                  />
+              <div className={styles.author}>
+                <Image
+                  src={testimonials[currentIndex].image}
+                  alt={testimonials[currentIndex].name}
+                  width={80}
+                  height={80}
+                  className={styles.authorImage}
+                />
+                <div>
+                  <h3 className={styles.authorName}>
+                    {testimonials[currentIndex].name}
+                  </h3>
+                  <p className={styles.authorLocation}>
+                    {testimonials[currentIndex].location}
+                  </p>
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-primary">
-                {testimonial.name}
-              </h3>
-              <p className="text-secondary">{testimonial.location}</p>
-            </div>
-          </div>
-        ))}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        <div className={styles.indicators}>
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              className={`${styles.indicator} ${
+                index === currentIndex ? styles.active : ""
+              }`}
+              onClick={() => setCurrentIndex(index)}
+            ></button>
+          ))}
+        </div>
       </div>
     </section>
   );

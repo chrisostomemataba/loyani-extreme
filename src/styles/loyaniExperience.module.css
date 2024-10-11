@@ -1,75 +1,160 @@
-/* loyaniExperience.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
 
-/* Main Section with Paintbrush Background */
 .loyaniExperience {
-    position: relative;
-    padding: 100px 0;
-    overflow: hidden;
+  padding: 100px 0;
+  background-color: #f0e9df;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ce6510;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  color: #5c564e;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.currencySelector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.currencySelector label {
+  margin-right: 1rem;
+  font-family: 'Roboto', sans-serif;
+  color: #5c564e;
+}
+
+.currencySelector select {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ce6510;
+  background-color: white;
+  color: #5c564e;
+  font-family: 'Roboto', sans-serif;
+}
+
+.experienceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.experienceCard {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experienceCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cardIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: #ce6510;
+  height: 80px; /* Adjust this value as needed */
+  margin: 1rem 0;
+}
+
+.cardIcon svg {
+  width: 48px; /* Adjust this value as needed */
+  height: 48px; /* Adjust this value as needed */
+}
+.cardTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #050403;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.cardImageWrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.cardDescription {
+  font-family: 'Roboto', sans-serif;
+  color: #5c564e;
+  padding: 1rem;
+  text-align: center;
+}
+
+.cardDetails {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  font-family: 'Roboto', sans-serif;
+  color: #050403;
+}
+
+.exploreButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ce6510;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 1rem;
+}
+
+.exploreButton:hover {
+  background-color: #c1ab96;
+  transform: translateY(-3px);
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+  margin-left: 0.5rem;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.exploreButton:hover .arrow {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
   }
-  
-  .backgroundImage {
-    background-image: url('/images/paintbrush.png'); /* Use the paintbrush image */
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    opacity: 0.9;
-    backdrop-filter: blur(3px);
+
+  .subtitle {
+    font-size: 1rem;
   }
-  
-  /* Translucent Cards */
-  .card {
-    background-color: rgba(255, 255, 255, 0.3); /* Translucent effect */
-    border-radius: 15px;
-    backdrop-filter: blur(10px); /* Frosted glass effect */
-    padding: 20px;
-    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-    animation: fadeInUp 0.7s ease forwards;
-    opacity: 0;
+
+  .experienceGrid {
+    grid-template-columns: 1fr;
   }
-  
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card h3 {
-    color: var(--color-primary);
-  }
-  
-  .card p {
-    color: var(--color-muted);
-    font-size: 1.1rem;
-  }
-  
-  /* Button Styles - Updated to Rounded and Shadowed */
-  .cardBody a {
-    background-color: var(--color-secondary);
-    color: white;
-    border-radius: 50px; /* Rounded button */
-    padding: 12px 24px;
-    display: inline-block;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Button shadow */
-    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  }
-  
-  .cardBody a:hover {
-    background-color: var(--color-muted);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
-  }
-  
+}

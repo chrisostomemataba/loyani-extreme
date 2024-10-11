@@ -5,14 +5,57 @@
 }
 
 .modalContent {
-  background-color: rgba(255, 255, 255, 0.9); /* Translucent background */
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   padding: 2rem;
   width: 600px;
-  max-width: 100%;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .step-content {
   margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .modalContent {
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  .step-content {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Adjust typography for mobile */
+  .modalContent h4 {
+    font-size: 1.5rem;
+  }
+
+  /* Make form inputs full width on mobile */
+  .modalContent .MuiTextField-root {
+    width: 100%;
+  }
+
+  /* Adjust stepper for mobile */
+  .modalContent .MuiStepper-root {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .modalContent .MuiStep-root {
+    padding-bottom: 1rem;
+  }
+
+  /* Adjust button layout for mobile */
+  .modalContent .MuiBox-root {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .modalContent .MuiButton-root {
+    width: 100%;
+  }
 }

@@ -1,83 +1,177 @@
-/* wildlifeShowcase.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
 
-/* Main Section with a fading background image using "lions" image */
 .wildlifeShowcase {
-    position: relative;
-    padding: 100px 0;
-    overflow: hidden;
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+  background-color: #f0e9df;
+}
+
+.backgroundImage {
+  background-image: url('/images/lions.jpg');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.3;
+  transition: opacity 1s ease-in-out;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #050403;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  color: #5c564e;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cardImageWrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.cardImage {
+  transition: transform 0.5s ease;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.1);
+}
+
+.cardDuration {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(206, 101, 16, 0.9);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+.cardTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ce6510;
+  margin-bottom: 0.5rem;
+}
+
+.cardDescription {
+  font-family: 'Roboto', sans-serif;
+  color: #5c564e;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.cardOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(206, 101, 16, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.funFact {
+  font-family: 'Playfair Display', serif;
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.cardButton {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ce6510;
+  background-color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cardButton:hover {
+  background-color: #f5f5f5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.cardButton:active {
+  background-color: #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
   }
-  
-  .backgroundImage {
-    background-image: url('/images/lions.jpg'); /* Using the lions image */
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    opacity: 0.9;
-    transition: opacity 1s ease-in-out;
+
+  .subtitle {
+    font-size: 1rem;
   }
-  
-  .wildlifeShowcase:hover .backgroundImage {
-    opacity: 0.4;
-    background-color: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(3px);
+
+  .cardGrid {
+    grid-template-columns: 1fr;
   }
-  
-  /* Wildlife Cards */
-  .card {
-    background-color: white;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-    position: relative;
-    animation: fadeInUp 0.7s ease forwards;
-    opacity: 0;
-  }
-  
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
-  }
-  
-  .cardBody {
-    padding: 20px;
-  }
-  
-  .cardBody h3 {
-    color: var(--color-primary);
-  }
-  
-  .cardBody p {
-    color: var(--color-muted);
-    font-size: 1.1rem;
-  }
-  
-  /* Button Styles */
-  .cardBody a {
-    background-color: var(--color-secondary);
-    color: white;
-    border-radius: 8px;
-    padding: 12px 24px;
-    display: inline-block;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  .cardBody a:hover {
-    background-color: var(--color-muted);
-  }
-  
+}

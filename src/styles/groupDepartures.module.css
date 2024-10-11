@@ -1,61 +1,155 @@
-/* groupDepartures.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
 
-/* Main Section */
 .groupDepartures {
-  position: relative;
   padding: 100px 0;
-  background-color: var(--color-background);
+  background-color: #f0e9df;
+  position: relative;
 }
 
-/* Translucent Table Card */
-.tableCard {
-  background-color: rgba(255, 255, 255, 0.3); /* Translucent effect */
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ce6510;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  color: #5c564e;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.currencySelector {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.currencySelector label {
+  margin-right: 1rem;
+  font-family: 'Roboto', sans-serif;
+  color: #5c564e;
+}
+
+.currencySelector select {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ce6510;
+  background-color: white;
+  color: #5c564e;
+  font-family: 'Roboto', sans-serif;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  background-color: white;
   border-radius: 15px;
-  backdrop-filter: blur(10px); /* Frosted glass effect */
-  padding: 20px;
-  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.tableCard:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
-}
-
-/* Table Styling - Added .customTable class */
-.customTable {
+.departureTable {
   width: 100%;
-  border-collapse: collapse;
-  font-size: 1.1rem;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
-.customTable th, .customTable td {
-  padding: 16px;
+.departureTable th,
+.departureTable td {
+  padding: 1.5rem 1rem;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
 }
 
-.customTable th {
-  background-color: rgba(255, 255, 255, 0.2);
-  text-transform: uppercase;
-}
-
-.customTable td {
-  color: var(--color-primary);
-}
-
-.customTable tr:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Button Styling */
-.customTable td a {
-  background-color: var(--color-secondary);
+.departureTable th {
+  background-color: #ce6510;
   color: white;
-  border-radius: 50px; /* Rounded button */
-  padding: 12px 24px;
-  display: inline-block;
-  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
 }
 
-.customTable td a:hover {
-  background-color: var(--color-muted);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+.departureTable td {
+  color: #050403;
+}
+
+.departureTable th:first-child {
+  border-top-left-radius: 15px;
+}
+
+.departureTable th:last-child {
+  border-top-right-radius: 15px;
+}
+
+.departureTable tr:nth-child(even) {
+  background-color: #f9f5f0;
+}
+
+.departureTable tr:hover {
+  background-color: #f0e9df;
+}
+
+.bookButton {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ce6510;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.bookButton:hover {
+  background-color: #c1ab96;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .groupDepartures {
+    padding: 50px 0;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .currencySelector {
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .tableWrapper {
+    overflow-x: scroll;
+  }
+
+  .departureTable {
+    width: 800px;
+  }
+
+  .departureTable th,
+  .departureTable td {
+    padding: 1rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .bookButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
 }

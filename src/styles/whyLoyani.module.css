@@ -1,107 +1,231 @@
-/* whyLoyani.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
 
-/* Main Section with a doodled background */
 .whyLoyani {
-    background-color: var(--color-background);
-    padding: 80px 0;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-  }
-  
-  .doodledBackground {
-    background-image: url('/images/doodle-pattern.png'); /* Placeholder doodle image */
-    background-size: 200px;
-    background-repeat: repeat;
-    opacity: 0.07;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
-  
-  /* Carousel Container */
-  .carouselContainer {
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .carousel {
+  background-color: #f0e9df;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.doodledBackground {
+  background-image: url('/images/doodle-pattern.png');
+  background-size: 200px;
+  background-repeat: repeat;
+  opacity: 0.07;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: rotateBg 100s linear infinite;
+}
+
+@keyframes rotateBg {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.sectionTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ce6510;
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.carouselContainer {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  position: relative;
+}
+
+.carouselImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carouselImage:hover {
+  transform: scale(1.05);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 2rem;
     display: flex;
-    transition: transform 0.8s ease-in-out;
-    animation: scrollSlide 16s infinite;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+  font-size: 3rem;
+  color: #ce6510;
+  margin-bottom: 1rem;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #050403;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-family: 'Roboto', sans-serif;
+  color: #5c564e;
+  line-height: 1.6;
+}
+
+.testimonialSection {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.testimonialTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #050403;
+  margin-bottom: 2rem;
+}
+
+.testimonials {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.testimonial {
+  background-color: white;
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 350px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  animation: fadeInUp 1s ease-out;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+}
+
+.quoteIcon {
+  font-size: 2rem;
+  color: #ce6510;
+  margin-bottom: 1rem;
+}
+
+.testimonial p {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  color: #5c564e;
+  margin-bottom: 1rem;
+}
+
+.author {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #050403;
+}
+
+.ctaContainer {
+  text-align: center;
+}
+
+.ctaButton {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+  background-color: #ce6510;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+.ctaButton:hover {
+  background-color: #c1ab96;
+  transform: translateY(-3px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  @keyframes scrollSlide {
-    0%, 100% {
-      transform: translateX(0);
-    }
-    25% {
-      transform: translateX(-100%);
-    }
-    50% {
-      transform: translateX(-200%);
-    }
-    75% {
-      transform: translateX(-300%);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .slide {
-    flex: 0 0 100%;
-    display: inline-block;
-    padding: 0 10px;
-    position: relative;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(206, 101, 16, 0.4);
   }
-  
-  .slide img {
-    border-radius: 12px;
-    transition: transform 0.5s ease-in-out;
+  70% {
+    box-shadow: 0 0 0 10px rgba(206, 101, 16, 0);
   }
-  
-  .slide:hover img {
-    transform: scale(1.08);
+  100% {
+    box-shadow: 0 0 0 0 rgba(206, 101, 16, 0);
   }
-  
-  /* Shadowed and Padded Cards for Features */
-  .card {
-    background-color: white;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    position: relative;
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2.5rem;
   }
-  
-  .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+
+  .features {
+    grid-template-columns: 1fr;
   }
-  
-  .card h3 {
-    color: var(--color-primary);
+
+  .testimonials {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .card p {
-    color: var(--color-muted);
-    font-size: 1.1rem;
-  }
-  
-  /* Call to Action Button */
-  .ctaButton {
-    font-size: 1.2rem;
-    padding: 0.8rem 2rem;
-    border-radius: 50px;
-    background-color: var(--color-secondary);
-    color: white;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  .ctaButton:hover {
-    background-color: var(--color-muted);
-  }
-  
+}

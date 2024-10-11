@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, MenuItem } from "@mui/material";
-import { ArrowDropDown } from "@mui/icons-material";
+import { ArrowDropDown, Menu as MenuIcon, Close } from "@mui/icons-material";
 import styles from "../../styles/header.module.css";
 
 export default function Header() {
@@ -41,11 +41,7 @@ export default function Header() {
   };
 
   return (
-    <header
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md" : "bg-transparent"
-      }`}
-    >
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
@@ -54,25 +50,22 @@ export default function Header() {
               alt="Loyani Tours Logo"
               width={80}
               height={80}
-              className="w-20 h-20"
+              className="w-16 h-16 md:w-20 md:h-20"
             />
-            <h1 className="text-white text-xl font-bold ml-4 md:text-3xl">
+            <h1
+              className={`${styles.logo} ml-2 md:ml-4 text-lg md:text-xl lg:text-2xl font-bold`}
+            >
               Loyani Tours & Safaris
             </h1>
           </div>
-          <nav className="hidden md:flex space-x-6">
-            <Link
-              href="/"
-              className={`transition-colors duration-200 py-2 px-4 rounded ${
-                isScrolled ? "text-loyani-primary" : "text-white"
-              } hover:text-loyani-accent`}
-            >
+          <nav className="hidden md:flex space-x-4 lg:space-x-6">
+            <Link href="/" className={styles.navItem}>
               Home
             </Link>
             <div className="relative">
               <button
                 onClick={handleSafariClick}
-                className="text-white hover:text-loyani-accent transition-colors duration-200 flex items-center"
+                className={`${styles.navItem} flex items-center`}
               >
                 Safaris <ArrowDropDown />
               </button>
@@ -80,7 +73,9 @@ export default function Header() {
                 anchorEl={safariAnchorEl}
                 open={Boolean(safariAnchorEl)}
                 onClose={handleClose}
-                className="mt-2"
+                MenuListProps={{
+                  className: styles.menuList,
+                }}
               >
                 <MenuItem
                   onClick={handleClose}
@@ -108,7 +103,7 @@ export default function Header() {
             <div className="relative">
               <button
                 onClick={handleAccommodationClick}
-                className="text-white hover:text-loyani-accent transition-colors duration-200 flex items-center"
+                className={`${styles.navItem} flex items-center`}
               >
                 Accommodation <ArrowDropDown />
               </button>
@@ -116,106 +111,93 @@ export default function Header() {
                 anchorEl={accommodationAnchorEl}
                 open={Boolean(accommodationAnchorEl)}
                 onClose={handleClose}
-                className="mt-2"
+                MenuListProps={{
+                  className: styles.menuList,
+                }}
               >
                 <MenuItem
                   onClick={handleClose}
                   component={Link}
-                  href="/accomodation/kilimanjaro"
+                  href="/accommodation/kilimanjaro"
                 >
                   Hotels Near Mount Kilimanjaro
                 </MenuItem>
                 <MenuItem
                   onClick={handleClose}
                   component={Link}
-                  href="/accomodation/serengeti"
+                  href="/accommodation/serengeti"
                 >
                   Hotels in Serengeti
                 </MenuItem>
               </Menu>
             </div>
-            <Link
-              href="/about"
-              className={`transition-colors duration-200 py-2 px-4 rounded ${
-                isScrolled ? "text-loyani-primary" : "text-white"
-              } hover:text-loyani-accent`}
-            >
+            <Link href="/about" className={styles.navItem}>
               About Us
             </Link>
-            <Link
-              href="/about#founder-section"
-              className={`transition-colors duration-200 py-2 px-4 rounded ${
-                isScrolled ? "text-loyani-primary" : "text-white"
-              } hover:text-loyani-accent`}
-            >
+            <Link href="/about#founder-section" className={styles.navItem}>
               Contact
             </Link>
           </nav>
-          <div className="md:hidden">
-            <button
-              onClick={toggleMenu}
-              className="text-white text-3xl focus:outline-none"
-            >
-              &#9776;
-            </button>
-          </div>
+          <button
+            onClick={toggleMenu}
+            className={`${styles.menuToggle} md:hidden`}
+            aria-label="Toggle mobile menu"
+          >
+            {menuOpen ? <Close /> : <MenuIcon />}
+          </button>
         </div>
       </div>
 
       {menuOpen && (
-        <nav className="md:hidden bg-white bg-opacity-95 p-4 absolute w-full left-0 top-full z-50 shadow-md">
-          <Link
-            href="/"
-            className="block py-2 text-loyani-primary hover:text-loyani-accent transition-colors duration-200"
-            onClick={toggleMenu}
-          >
+        <nav className={styles.mobileMenu}>
+          <Link href="/" className={styles.mobileNavItem} onClick={toggleMenu}>
             Home
           </Link>
           <Link
             href="/safaris/discover-the-peaks"
-            className="block py-2 text-loyani-primary hover:text-loyani-accent transition-colors duration-200"
+            className={styles.mobileNavItem}
             onClick={toggleMenu}
           >
             Discover the Peaks
           </Link>
           <Link
             href="/safaris/cultural-safaris"
-            className="block py-2 text-loyani-primary hover:text-loyani-accent transition-colors duration-200"
+            className={styles.mobileNavItem}
             onClick={toggleMenu}
           >
             Cultural Safaris
           </Link>
           <Link
             href="/safaris/luxury-safaris"
-            className="block py-2 text-loyani-primary hover:text-loyani-accent transition-colors duration-200"
+            className={styles.mobileNavItem}
             onClick={toggleMenu}
           >
             Luxury Safaris
           </Link>
           <Link
             href="/accommodation/kilimanjaro"
-            className="block py-2 text-loyani-primary hover:text-loyani-accent transition-colors duration-200"
+            className={styles.mobileNavItem}
             onClick={toggleMenu}
           >
             Hotels Near Mount Kilimanjaro
           </Link>
           <Link
             href="/accommodation/serengeti"
-            className="block py-2 text-loyani-primary hover:text-loyani-accent transition-colors duration-200"
+            className={styles.mobileNavItem}
             onClick={toggleMenu}
           >
             Hotels in Serengeti
           </Link>
           <Link
             href="/about"
-            className="block py-2 text-loyani-primary hover:text-loyani-accent transition-colors duration-200"
+            className={styles.mobileNavItem}
             onClick={toggleMenu}
           >
             About Us
           </Link>
           <Link
             href="/about#founder-section"
-            className="block py-2 text-loyani-primary hover:text-loyani-accent transition-colors duration-200"
+            className={styles.mobileNavItem}
             onClick={toggleMenu}
           >
             Contact
