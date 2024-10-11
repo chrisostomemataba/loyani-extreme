@@ -175,14 +175,14 @@ export default function Header() {
             Luxury Safaris
           </Link>
           <Link
-            href="/accommodation/kilimanjaro"
+            href="/accomodation/kilimanjaro"
             className={styles.mobileNavItem}
             onClick={toggleMenu}
           >
             Hotels Near Mount Kilimanjaro
           </Link>
           <Link
-            href="/accommodation/serengeti"
+            href="/accomodation/serengeti"
             className={styles.mobileNavItem}
             onClick={toggleMenu}
           >
