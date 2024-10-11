@@ -1,7 +1,7 @@
 "use client";  // Client-side component
 
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa'; // Social media icons
-import styles from '../../styles/footer.module.css';  // Custom CSS for footer
+import styles from '../../styles/Footer.module.css';  // Custom CSS for footer
 
 export default function Footer() {
   return (
