@@ -15,6 +15,7 @@ import AccommodationHero from '@/app/components/AccommodationHero';
 import BookingModal from '@/app/components/BookingModal';
 import { useState } from 'react';
 import axios from 'axios';
+import TripAdvisorSection from '@/app/components/TripAdvisorSection';
 
 export default function AccommodationPage() {
 
@@ -62,6 +63,32 @@ export default function AccommodationPage() {
           tripAdvisorUrl: "https://www.tripadvisor.com/Hotel_Review-g293751-d12565871-Reviews-Melia_Serengeti_Lodge-Serengeti_National_Park.html",
           website: "https://www.melia.com/serengeti"
         },
+        {
+  id: "kirawira-serengeti-camp",
+  title: "Kirawira Serena Camp",
+  image: "/images/kirawira-serena-camp.jpg",
+  description: "A luxury tented camp that offers a classic safari experience with an elegant Edwardian ambiance.",
+  tripAdvisorUrl: "https://www.tripadvisor.com/Hotel_Review-g293751-d523818-Reviews-Kirawira_Serena_Camp-Serengeti_National_Park.html",
+  website: "https://www.serenahotels.com/kirawira"
+},
+{
+  id: "andbeyond-grumeti-serengeti",
+  title: "&Beyond Grumeti Serengeti Tented Camp",
+  image: "/images/andbeyond-grumeti.png",
+  description: "A chic, secluded retreat in the Western Serengeti offering luxury and exclusivity.",
+  tripAdvisorUrl: "https://www.tripadvisor.com/Hotel_Review-g293751-d469549-Reviews-Grumeti_Serengeti_Tented_Camp-Serengeti_National_Park.html",
+  website: "https://www.andbeyond.com/grumeti"
+},
+
+{
+  id: "ronjo-camp",
+  title: "Ronjo Camp",
+  image: "/images/ronjo-camp.jpg",
+  description: "An intimate tented camp with a focus on sustainability and an authentic Serengeti experience.",
+  tripAdvisorUrl: "https://www.tripadvisor.com/Hotel_Review-g293751-d1234567-Reviews-Ronjo_Camp-Serengeti_National_Park.html",
+  website: "https://ronjocamp.com"
+},
+
         {
           id: "kubu-kubu-lodge",
           title: "Kubu Kubu Tented Lodge",
@@ -134,32 +161,7 @@ export default function AccommodationPage() {
 
       <AccommodationHotelsSection hotels={accommodation.hotels} />
 
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-primary text-center mb-12">Check on TripAdvisor</h2>
-          <div className="grid gap-6 px-6 md:px-20 grid-cols-1 md:grid-cols-2">
-            {accommodation.hotels.map((hotel) => (
-              <Card key={hotel.id} className="hover:shadow-lg transition-shadow duration-300 rounded-lg">
-                <CardContent>
-                  <Typography variant="h6" className="text-lg font-semibold text-primary">
-                    {hotel.title}
-                  </Typography>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    href={hotel.tripAdvisorUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    sx={{ mt: 2 }}
-                  >
-                    View on TripAdvisor
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TripAdvisorSection hotels={accommodation.hotels} />
 
       <AccommodationFAQ />  {/* New FAQ section */}
       <InquiryForm />  {/* Reuse Inquiry Form */}

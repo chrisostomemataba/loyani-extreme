@@ -10,10 +10,20 @@ import { useState } from "react";
 import styles from "../../styles/ourStory.module.css"; // Our Story styles
 import statsStyles from "../../styles/statisticsCounter.module.css"; // Statistics Counter styles
 import ContactUs from "@/app/components/ContactUs";
+import { Typography, Box } from "@mui/material";
+import dynamic from "next/dynamic";
+
+
 
 export default function AboutPage() {
   // Define the isBookingModalOpen state to control the modal visibility
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
+  // Dynamically import the MapComponent with no SSR
+  const MapComponent = dynamic(() => import("../components/MapComponent"), {
+    ssr: false,
+    loading: () => <p>Loading map...</p>,
+  });
 
   const handleBookingSubmit = (formData) => {
     // TODO: Send the email and handle form data submission
@@ -40,6 +50,18 @@ export default function AboutPage() {
       <FoundersSection /> {/* Founders Section */}
       <StatisticsCounter stats={stats} /> {/* New Statistics Counter Section */}
       <ContactUs />
+      <Box sx={{ padding: "5rem 0", backgroundColor: "#fff" }}>
+        <Typography
+          variant="h2"
+          align="center"
+          sx={{ marginBottom: "2rem", color: "#ce6510" }}
+        >
+          Find Us Here
+        </Typography>
+        <Box sx={{ maxWidth: "1200px", margin: "0 auto", padding: "0 2rem" }}>
+          <MapComponent />
+        </Box>
+      </Box>
       <BookingModal
         open={isBookingModalOpen}
         onClose={() => setIsBookingModalOpen(false)}

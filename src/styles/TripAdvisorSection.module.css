@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
+
+.tripAdvisorSection {
+  background-color: #f0e9df;
+  padding: 5rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ce6510;
+  text-align: center;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.starIcon {
+  color: #00aa6c;
+  margin: 0 1rem;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem !important;
+}
+
+.hotelTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: #050403;
+  margin-bottom: 1.5rem !important;
+  text-align: center;
+}
+
+.tripAdvisorButton {
+  font-family: 'Roboto', sans-serif !important;
+  background-color: #00aa6c !important;
+  color: white !important;
+  padding: 0.75rem 1.5rem !important;
+  font-size: 1rem !important;
+  border-radius: 50px !important;
+  text-transform: none !important;
+  transition: background-color 0.3s ease, transform 0.3s ease !important;
+}
+
+.tripAdvisorButton:hover {
+  background-color: #008f5b !important;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+}

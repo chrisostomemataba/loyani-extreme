@@ -1,107 +1,148 @@
-/* Section Wrapper */
-.foundersWrapper {
-  padding: 2rem 1rem;
-  background-color: var(--color-background);
-  color: rgb(var(--foreground-rgb));
-  text-align: center;
-  transition: opacity 0.6s ease-in-out;
-  margin: 0;
-  opacity: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
 
-.fadeIn {
-  opacity: 1;
-}
-
-.sectionTitle {
-  font-size: 2.5rem;
-  color: var(--color-primary);
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-}
-
-/* Cards Container */
-.cardsContainer {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-/* Card Styling */
-.card {
-  background-color: white;
-  width: 100%;
-  max-width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+.foundersSection {
+  background-color: #f0e9df;
+  padding: 5rem 0;
   overflow: hidden;
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 1.5rem;
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
-}
-
-/* Image Bleed Effect */
-.imageWrapper {
-  position: relative;
-  overflow: visible;
-}
-
-.founderImage {
-  width: 100%;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
-  position: relative;
-  top: -15px;
-}
-
-/* Card Content */
-.cardContent {
-  padding: 1rem;
-  background-color: var(--color-background);
-}
-
-.founderName {
-  font-size: 1.5rem;
-  color: var(--color-primary);
-}
-
-.founderRole {
-  font-size: 1.1rem;
-  color: var(--color-muted);
-}
-
-.founderBiography {
-  font-size: 1rem;
-  color: var(--color-secondary);
-  line-height: 1.5;
-}
-
-/* Animation for Cards */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fadeUp {
-  animation: fadeUp 0.6s ease-out;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .sectionTitle {
-  @apply text-4xl font-bold text-center text-orange-600 mb-10;
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ce6510;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.foundersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 4rem;
+  margin-bottom: 4rem;
 }
 
 .founderCard {
-  @apply bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300;
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.founderCard:hover {
+  transform: translateY(-10px);
+}
+
+.imageWrapper {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.founderImage {
+  transition: transform 0.3s ease;
+}
+
+.founderCard:hover .founderImage {
+  transform: scale(1.05);
+}
+
+.cardContent {
+  padding: 2rem;
+}
+
+.founderName {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #050403;
+  margin-bottom: 0.5rem;
+}
+
+.founderRole {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #ce6510;
+  margin-bottom: 1rem;
+}
+
+.founderBio {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #5c564e;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.quoteWrapper {
+  background-color: #f9f5f0;
+  padding: 1.5rem;
+  border-radius: 10px;
+  position: relative;
+}
+
+.quoteIcon {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  font-size: 1.5rem;
+  color: #ce6510;
+}
+
+.founderQuote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #050403;
+}
+
+.storySection {
+  background-color: white;
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.storyTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ce6510;
+  margin-bottom: 1.5rem;
+}
+
+.storyText {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  color: #5c564e;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .foundersGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .imageWrapper {
+    height: 250px;
+  }
+
+  .storySection {
+    padding: 2rem;
+  }
+
+  .storyTitle {
+    font-size: 2rem;
+  }
 }

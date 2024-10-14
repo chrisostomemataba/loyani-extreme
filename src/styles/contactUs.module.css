@@ -1,27 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
+
 .contactSection {
   background-color: #f0e9df;
-  color: #050403;
-  padding: 2rem;
-}
-
-.mapWrapper {
-  border-radius: 10px;
+  padding: 5rem 0;
+  position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
 }
 
-.mapWrapper:hover {
-  transform: scale(1.03);
+.contentWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
+.sectionTitle {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 3.5rem !important;
+  font-weight: 700 !important;
+  text-align: center;
+  margin-bottom: 1rem !important;
+  color: #ce6510;
+}
+
+.sectionSubtitle {
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 1.2rem !important;
+  text-align: center;
+  margin-bottom: 3rem !important;
+  color: #5c564e;
+}
+
+.contactContent {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.formWrapper {
+  flex: 1;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputField {
+  margin-bottom: 1rem !important;
+}
+
+.inputField label {
+  color: #ce6510 !important;
+}
+
+.submitButton {
+  background-color: #ce6510 !important;
+  color: white !important;
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 500 !important;
+  padding: 0.75rem !important;
+  font-size: 1rem !important;
+  text-transform: none !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.submitButton:hover {
+  background-color: #ff8c42 !important;
+}
+
+.contactInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.inputField {
+  margin-bottom: 1rem !important;
+}
+
+.inputField label {
+  color: #ce6510 !important;
+}
+
+.inputField input,
+.inputField textarea {
+  color: #050403 !important;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.infoItem:hover {
+  transform: translateY(-5px);
+}
+
+.infoIcon {
+  font-size: 2rem;
+  color: #ce6510;
+}
+
+.infoItem h6 {
+  color: #ce6510 !important;
+  font-weight: 600 !important;
+}
+
+.infoItem p {
+  color: #050403 !important;
+}
+
+
+@media (max-width: 768px) {
+  .contactContent {
+    flex-direction: column;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .sectionTitle {
+    font-size: 2.5rem !important;
+  }
+
+  .sectionSubtitle {
+    font-size: 1rem !important;
   }
 }

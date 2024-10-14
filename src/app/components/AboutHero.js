@@ -1,32 +1,27 @@
 import React from "react";
-import styles from "../../styles/aboutHero.module.css"; // Correct path for CSS module
-import Button from "@mui/material/Button"; // Material UI Button component
+import Image from "next/image";
+import Button from "@mui/material/Button";
+import styles from "../../styles/aboutHero.module.css";
 
 const AboutHero = ({ title, subtitle, buttonText, onButtonClick }) => {
   return (
     <div className={styles.heroContainer}>
-      <video autoPlay loop muted className={styles.heroVideo}>
-        <source src="/videos/zebras.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <Image
+        src="/images/about-hero.jpg"
+        alt="About Loyani Safaris"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        priority
+      />
+      <div className={styles.overlay} />
       <div className={styles.textContainer}>
         <h1 className={styles.heroTitle}>{title}</h1>
         <p className={styles.heroSubtitle}>{subtitle}</p>
-        {/* Button with Tailwind + Material UI */}
         <Button
           variant="contained"
           onClick={onButtonClick}
-          sx={{
-            backgroundColor: "#ff7f00", // Loyani Orange
-            "&:hover": {
-              backgroundColor: "#e66c00", // Darker Orange on hover
-            },
-            padding: "0.75rem 2rem",
-            fontSize: "1.25rem",
-            fontWeight: "bold",
-            borderRadius: "8px",
-            textTransform: "none",
-          }}
+          className={styles.heroButton}
         >
           {buttonText}
         </Button>

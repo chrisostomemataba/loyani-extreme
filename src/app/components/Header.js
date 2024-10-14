@@ -105,7 +105,7 @@ export default function Header() {
                 onClick={handleAccommodationClick}
                 className={`${styles.navItem} flex items-center`}
               >
-                Accommodation <ArrowDropDown />
+                Accomodation <ArrowDropDown />
               </button>
               <Menu
                 anchorEl={accommodationAnchorEl}
@@ -118,14 +118,14 @@ export default function Header() {
                 <MenuItem
                   onClick={handleClose}
                   component={Link}
-                  href="/accommodation/kilimanjaro"
+                  href="/accomodation/kilimanjaro"
                 >
                   Hotels Near Mount Kilimanjaro
                 </MenuItem>
                 <MenuItem
                   onClick={handleClose}
                   component={Link}
-                  href="/accommodation/serengeti"
+                  href="/accomodation/serengeti"
                 >
                   Hotels in Serengeti
                 </MenuItem>

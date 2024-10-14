@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import { FaQuoteLeft } from "react-icons/fa";
 import styles from "../../styles/foundersSection.module.css";
-import ourStoryStyles from "../../styles/ourStory.module.css";
 
 const foundersData = [
   {
@@ -11,6 +11,7 @@ const foundersData = [
     image: "/images/black-businessman.png",
     biography:
       "Moses is an avid adventurer and nature enthusiast, passionate about creating unforgettable safari experiences.",
+    quote: "Every safari is a story waiting to be told.",
   },
   {
     name: "Ibrahim",
@@ -18,62 +19,68 @@ const foundersData = [
     image: "/images/black-businessman.png",
     biography:
       "Ibrahim is a logistics mastermind, ensuring every Loyani safari runs smoothly. His love for the African wilderness is unmatched.",
+    quote: "In the heart of the wild, we find our true selves.",
   },
 ];
 
 const FoundersSection = () => {
-  const { ref: foundersRef, inView: foundersInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
-
   return (
-    <section
-      className={`${styles.foundersWrapper} ${
-        foundersInView ? styles.fadeIn : ""
-      }`}
-      ref={foundersRef}
-    >
-      {/* Our Story Section */}
-      <section
-        className={`${ourStoryStyles["our-story-section"]} py-16 bg-gray-50 dark:bg-gray-900`}
-      >
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-primary text-center mb-12">
-            Our Story
-          </h2>
-          <p className="text-lg text-center mb-12">
+    <section className={styles.foundersSection}>
+      <div className={styles.container}>
+        <motion.h2
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className={styles.sectionTitle}
+        >
+          The Visionaries Behind Loyani Safaris
+        </motion.h2>
+
+        <div className={styles.foundersGrid}>
+          {foundersData.map((founder, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              className={styles.founderCard}
+            >
+              <div className={styles.imageWrapper}>
+                <Image
+                  src={founder.image}
+                  alt={`${founder.name} - Founder`}
+                  layout="fill"
+                  objectFit="cover"
+                  className={styles.founderImage}
+                />
+              </div>
+              <div className={styles.cardContent}>
+                <h3 className={styles.founderName}>{founder.name}</h3>
+                <p className={styles.founderRole}>{founder.role}</p>
+                <p className={styles.founderBio}>{founder.biography}</p>
+                <div className={styles.quoteWrapper}>
+                  <FaQuoteLeft className={styles.quoteIcon} />
+                  <p className={styles.founderQuote}>{founder.quote}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className={styles.storySection}
+        >
+          <h3 className={styles.storyTitle}>Our Story</h3>
+          <p className={styles.storyText}>
             At Loyani Safaris, we bring the untamed wilderness of Africa closer
             to you. With years of experience, our dedicated team offers the most
             personalized safari experience, ensuring you leave with memories
             that last a lifetime.
           </p>
-        </div>
-      </section>
-
-      <h2 className="text-4xl font-bold text-center text-orange-600 mb-10">
-        Meet the Founders
-      </h2>
-      <div className={styles.cardsContainer}>
-        {foundersData.map((founder, index) => (
-          <div key={index} className={`${styles.card} ${styles.fadeUp}`}>
-            <div className={styles.imageWrapper}>
-              <Image
-                src={founder.image}
-                alt={`${founder.name} - Founder`}
-                width={200}
-                height={200}
-                layout="responsive"
-                className={styles.founderImage}
-              />
-            </div>
-            <div className={styles.cardContent}>
-              <h3 className={styles.founderName}>{founder.name}</h3>
-              <p className={styles.founderRole}>{founder.role}</p>
-              <p className={styles.founderBiography}>{founder.biography}</p>
-            </div>
-          </div>
-        ))}
+        </motion.div>
       </div>
     </section>
   );
